@@ -37,6 +37,9 @@ android {
 
     buildTypes {
         release {
+            // O plugin extractor/youtubedl-android usa classes que o R8 remove.
+            isMinifyEnabled = false
+            isShrinkResources = false
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.getByName("debug")
